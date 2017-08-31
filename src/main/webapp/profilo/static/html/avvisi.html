@@ -1,0 +1,81 @@
+<div>
+  <div class="col-lg-12 col-md-6 col-sm-6" ng-init="profilo.initAvvisi()">
+    <div class="col-lg-12">
+      <div id="limitiImporto" class="main-widget">
+        <h2 class="main-widget-title">SERVIZI ATTIVI</h2>
+        <br>
+        <div class="row">
+          <!-- Carousel Conti -->
+          <div class="row marginbottom07 bootstro"
+               data-bootstro-title="Selezione conti"
+               data-bootstro-content="Seleziona il rapporto CPAY da consultare "
+               data-bootstro-width="500px"
+               data-bootstro-placement="bottom">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+              <div uic-combo-carousel carousel-repeat="conto in profilo.listaConti" 
+                   carousel-start-position="profilo.indiceContoDefault" 
+                   carousel-item-value="{{conto.idRapporto}}" 
+                   carousel-name="contosel" 
+                   carousel-model="profilo.contoAddebito"
+                   carousel-change="profilo.carouselChange(index)">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="box-content">
+                      <div class="row">
+                        <div class="col-lg-8 col-md-8 col-sm-8">
+                          <h3 class="noMargin">{{conto.name}}</h3>
+                          <strong class="red">{{conto.intestatario}}</strong>&nbsp;&nbsp;
+                          <span>{{conto.iban}}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-right">
+          <a ng-click="profilo.modificaAvvisi(profilo.avvisi)" 
+             class="btn btn-custom" ng-disabled="true">
+            Modifica 
+            <strong><i class="fa fa-chevron-right"></i></strong></a>
+        </div>
+        <div id="tabellaAvvisi">        
+          <table datatable="ng" dt-options="profilo.dtOptionsAvvisi" 
+                 id="elencoAvvisi" 
+                 class="table table-bordered table-striped" cellspacing="0" width="100%">
+
+            <thead>  
+              <tr>
+                <th></th>
+                <th>Messaggi informativi ad evento</th>
+                <th>SMS</th>
+                <th>Email</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="avviso in profilo.avvisi" >
+                <td data-dt-column="{{avviso.id}}_0"></td>
+                <td data-dt-column="{{avviso.id}}_1">{{avviso.descrizioneCondizione | translate}}</td>
+                <td data-dt-column="{{avviso.id}}_2"><a>{{profilo.sms[$index]}}</a><a ng-if="avviso.telefonoList.length!=0">&nbsp;<i class="fa fa-mobile"></i></a></td>
+                <td data-dt-column="{{avviso.id}}_3"><a>{{profilo.mail[$index]}}</a><a ng-if="avviso.mailList.length!=0">&nbsp;<i class="fa fa-envelope"></i></a></td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+        <div class="row margintop20">
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+            <a href="#" class="btn btn-custom inverted" tooltip-placement="top" uib-tooltip="Inserisci l'operazione tra i tuoi preferiti"><strong><i class="fa fa-star"></i></strong></a>	
+            <a href="#" class="btn btn-custom inverted" tooltip-placement="top" uib-tooltip="Stampa"><strong><i class="fa fa-print"></i></strong></a>
+            <a href="#" class="btn btn-custom inverted" tooltip-placement="top" uib-tooltip="Lorem ipsum dolor sit amet, consectetur adipiscing elit"><strong><i class="fa fa-info-circle"></i></strong></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

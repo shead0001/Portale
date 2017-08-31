@@ -1,0 +1,682 @@
+
+
+<!DOCTYPE html>
+   <html lang="it" manifest="/Portale/manifest.appcache">
+   <head>
+      <script type="text/javascript">
+         if (window.localStorage) {
+           if (parseInt(localStorage.getItem('tabs')) === 0) {
+             if (parseInt(localStorage.getItem('expireToken')) < Date.now()) {
+               localStorage.removeItem('token');
+             }
+           }
+           localStorage.removeItem('expireToken');
+           localStorage.setItem('tabs', (parseInt(localStorage.getItem('tabs'))||0)+1);  
+         }
+      </script>
+      <style type="text/css">
+      </style>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Home - SITO</title>
+         <!-- base href="/UtilityElaborazioniFisco/" /-->
+         <base href="/Portale/" />
+      <link rel="canonical" href='https://www.inail.it/cs/internet/home.html' />
+      <link type="text/css" rel="stylesheet"
+         href="https://www.inail.it/static/css/bootstrap.css" media="screen">
+      <link type="text/css" rel="stylesheet"
+         href="https://www.inail.it/static/css/font-awesome.min.css"
+         media="screen">
+      <link type="text/css" rel="stylesheet"
+         href="https://www.inail.it/static/css/jquery-ui.css" media="screen">
+      <!--link type="text/css" rel="stylesheet"
+         href="https://www.inail.it/static/css/custom.css" media="screen"-->
+       <link type="text/css" rel="stylesheet"
+         href="common/static/css/inail/custom.css" media="screen">
+      <link type="text/css" rel="stylesheet"
+         href="https://www.inail.it/static/css/foglia.css" media="screen">
+      <link type="text/css" rel="stylesheet"
+         href="https://www.inail.it/static/css/spid-sp-access-button.min.css" />
+      <link rel="stylesheet" type="text/css"
+         href="https://www.inail.it/static/css/print.css" media="print" />
+      <link rel="shortcut icon"
+         href="https://www.inail.it/static/img/favicon.ico" />
+      <link type="text/css" rel="stylesheet"
+         href="https://www.inail.it/static/css/hp.css" media="screen">
+	   <!-- custom css -->
+    <link href="common/static/css/dm-inail-style.css" rel="stylesheet">
+   </head>
+   <body class="col-1 home">
+      <div class="container">
+         
+         <header>
+            <h1 class="nocrawl">INAIL - Istituto Nazionale per
+               l'Assicurazione contro gli Infortuni sul Lavoro
+            </h1>
+            <!-- a href='https://www.inail.it/cs/internet/home.html'
+               title="torna alla homepage INAIL"> <img
+               src="https://www.inail.it/static/img/LogoInail.svg"
+               alt="INAIL - Istituto Nazionale per l'Assicurazione contro gli Infortuni sul Lavoro"
+               class="img-responsive">
+            </a-->
+            <h2 id="navinterna" class="hidden">Menu di navigazione interna
+               alla pagina
+            </h2>
+            <ul class="hidden">
+               <li><a accesskey="1" href="#contenutoprincipale"
+                  title="vai al contenuto di questa pagina">Contenuto della
+                  pagina</a> (accesskey: 1)
+               </li>
+               <li><a accesskey="r" href="#testoricerca"
+                  title="vai alla ricerca nel sito">Ricerca</a> (accesskey: r)</li>
+               <li><a accesskey="2" href="#navigazioneprincipale"
+                  title="vai al men&amp;ugrave; di navigazione del portale">Navigazione
+                  del portale</a> (accesskey: 2)
+               </li>
+               <li><a accesskey="3" href="#navigazioneutente"
+                  title="vai al men&amp;ugrave; di navigazione per tipologia di utenza">Navigazione
+                  per tipologia di utenza</a> (accesskey: 3)
+               </li>
+               <li><a accesskey="4" href="#correlati"
+                  title="vai agli argomenti correlati al contenuto di pagina">Argomenti
+                  correlati</a> (accesskey: 4)
+               </li>
+               <li><a accesskey="5" href="#navigazionealternativa"
+                  title="vai alla navigazione di accesso alternativo ai contenuti di portale">Navigazione
+                  alternativa</a> (accesskey: 5)
+               </li>
+               <li><a accesskey="6" href="#menuservizio"
+                  title="vai ai servizi e informazioni">Servizi e informazioni</a>
+                  (accesskey: 6)
+               </li>
+               <li><a accesskey="7" href="#menusocial"
+                  title="SITO nei Social Network">SITO nei Social Network</a>
+                  (accesskey: 7)
+               </li>
+               <li><a accesskey="l" href="#menulingua"
+                  title="Language version">Language version</a> (accesskey: l)</li>
+            </ul>
+            <hr class="hidden">
+            <!--div ng-include="'header.html'"-->
+
+
+			<nav class="navbar navbar-default">
+			   <div class="navbar-header">
+				  <p class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menuprincipale">
+					 <span class="sr-only">Menu</span>
+				  </p>
+			   </div>
+			   <div class="navbar-collapse collapse" id="menuprincipale">
+				  <form method="get" enctype="application/x-www-form-urlencoded" action="/cs/internet/risultati_ricerca.html" id="searchForm" name="searchForm">
+					 <div class="navbar-form navbar-left searchsite" role="search" id="formRicerca">
+						<h2 class="hidden">Cerca nel sito</h2>
+						<p class="form-group">
+						   <label class="hidden" for="textWrite">Parametro di ricerca</label>
+						   <input type="text" id="textWrite" name="textWrite" class="form-control ui-autocomplete-input" placeholder="Cerca nel portale" title="inserisci il parametro da cercare su tutto il sito" autocomplete="off">
+						   <input type="hidden" id="textToFind" name="textToFind" value="">
+						   <button type="submit" class="btn btn-default">Cerca</button>
+						</p>
+						<p class="hidden">
+						   <a href="#navinterna" title="torna alla navigazione interna alla pagina">Torna alla
+						   navigazione interna</a>
+						</p>
+					 </div>
+				  </form>
+				  
+				  <h2 class="hidden">Menu di navigazione principale</h2>
+				  <ul id="navigazioneprincipale" role="menu" class="nav navbar-nav">
+					 <li class="dropdown">
+						<a href="https://www.inail.it/cs/internet/istituto.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Istituto <span class="sr-only">(selezionato)</span>
+						</a> 
+						<div class="dropdown-menu">
+						   <div class="visible-sm-block visible-md-block visible-lg-block">
+							  <h3>Istituto</h3>
+							  <p>
+								 Presentazione dell’Ente, della sua organizzazione amministrativa e territoriale, delle relazioni con altri enti e con organi e organismi internazionali.
+							  </p>
+							  <p>
+								 <button type="submit" class="btn btn-default" onclick="location.href='/cs/internet/istituto.html';">vai alla sezione</button>
+							  </p>
+						   </div>
+						   <ul role="menu">
+							  <li><a href="https://www.sito.it/cs/internet/istituto/chi-siamo.html">Chi siamo</a></li>							  
+							  <li><a href="https://www.sito.it/cs/internet/istituto/progetti.html">Progetti</a></li>
+							  <li><a href="https://www.sito.it/cs/internet/istituto/relazioni-internazionali.html">Relazioni internazionali</a></li>
+							  
+						   </ul>
+						</div>
+					 </li>
+					 <li class="dropdown">
+						<a href="https://www.sito.it/cs/internet/attivita.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Attività <span class="sr-only">(selezionato)</span>
+						</a> 
+						<div class="dropdown-menu">
+						   <div class="visible-sm-block visible-md-block visible-lg-block">
+							  <h3>Attività</h3>
+							  <p>
+								 Principali aree di azione volte a ridurre il fenomeno infortunistico, assicurare dai rischi e garantire la tutela dei lavoratori.
+							  </p>
+							  <p>
+								 <button type="submit" class="btn btn-default" onclick="location.href='/cs/internet/attivita.html';">vai alla sezione</button>
+							  </p>
+						   </div>
+						   <ul role="menu">
+							  <li><a href="https://www.sito.it/cs/internet/attivita/prevenzione-e-sicurezza.html">Prevenzione e sicurezza</a></li>
+							  <li><a href="https://www.sito.it/cs/internet/attivita/assicurazione.html">Assicurazione</a></li>
+							  <li><a href="https://www.sito.it/cs/internet/attivita/prestazioni.html">Prestazioni</a></li>
+							  <li><a href="https://www.sito.it/cs/internet/attivita/ricerca-e-tecnologia.html">Ricerca e Tecnologia</a></li>
+							  <li><a href="https://www.sito.it/cs/internet/attivita/dati-e-statistiche.html">Dati e statistiche</a></li>
+						   </ul>
+						</div>
+					 </li>
+					 <li class="dropdown">
+						<a href="https://www.sito.it/cs/internet/atti-e-documenti.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Atti e Documenti <span class="sr-only">(selezionato)</span>
+						</a> 
+						<div class="dropdown-menu">
+						   <div class="visible-sm-block visible-md-block visible-lg-block">
+							  <h3>Atti e Documenti</h3>
+							  <p>
+								 Documentazione prodotta dagli Organi dell’sito, protocolli d’intesa, convenzioni e accordi con enti e istituzioni, istruzioni operative e modulistica.
+							  </p>
+							  <p>
+								 <button type="submit" class="btn btn-default" onclick="location.href='/cs/internet/atti-e-documenti.html';">vai alla sezione</button>
+							  </p>
+						   </div>
+						   <ul role="menu">
+							  <li><a href="https://www.sito.it/cs/internet/atti-e-documenti/note-e-provvedimenti.html">Note e Provvedimenti</a></li>
+							  <li><a href="https://www.sito.it/cs/internet/atti-e-documenti/note-e-provvedimenti/storico-documentale.html">Storico documentale</a></li>
+							  <li><a href="https://www.sito.it/cs/internet/atti-e-documenti/protocolli-e-accordi.html">Protocolli e accordi</a></li>
+							  <li><a href="https://www.sito.it/cs/internet/atti-e-documenti/istruzioni-operative.html">Istruzioni operative</a></li>
+							  <li><a href="https://www.sito.it/cs/internet/atti-e-documenti/moduli-e-modelli.html">Moduli e modelli</a></li>
+						   </ul>
+						</div>
+					 </li>
+					 <li class="dropdown">
+						<a href="https://www.sito.it/cs/internet/comunicazione.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Comunicazione <span class="sr-only">(selezionato)</span>
+						</a> 
+						<div class="dropdown-menu">
+						   <div class="visible-sm-block visible-md-block visible-lg-block">
+							  <h3>Comunicazione</h3>
+							  <p>
+								 Contenuti per i media, documenti e informazioni istituzionali utili ad approfondire attività, finalità e conoscenza dell’Istituto
+							  </p>
+							  <p>
+								 <button type="submit" class="btn btn-default" onclick="location.href='/cs/internet/comunicazione.html';">vai alla sezione</button>
+							  </p>
+						   </div>
+						   <ul role="menu">
+							  <li><a href="https://www.sito.it/cs/internet/comunicazione/avvisi-e-scadenze.html">Avvisi e scadenze</a></li>
+							  <li><a href="https://www.sito.it/cs/internet/comunicazione/sala-stampa.html">Sala Stampa</a></li>
+							  <li><a href="https://www.sito.it/cs/internet/comunicazione/campagne.html">Campagne</a></li>
+							  <li><a href="https://www.sito.it/cs/internet/comunicazione/pubblicazioni.html">Pubblicazioni</a></li>
+							  <li><a href="https://www.sito.it/cs/internet/comunicazione/news-ed-eventi.html">News ed eventi</a></li>
+							  <li><a href="https://www.sito.it/cs/internet/comunicazione/newsletter.html">Newsletter</a></li>
+							  <li><a href="https://www.sito.it/cs/internet/comunicazione/multimedia.html">Multimedia</a></li>
+						   </ul>
+						</div>
+					 </li>
+					 <li class="dropdown">
+						<a href="https://www.sito.it/cs/internet/servizi-per-te.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Servizi Per Te <span class="sr-only">(selezionato)</span>
+						</a> 
+						<div class="dropdown-menu">
+						   <div class="visible-sm-block visible-md-block visible-lg-block">
+							  <h3>Servizi Per Te</h3>
+							  <p>
+								 Strumenti e servizi per lavoratori e aziende
+							  </p>
+							  <p>
+								 <button type="submit" class="btn btn-default" onclick="location.href='/cs/internet/servizi-per-te.html';">vai alla sezione</button>
+							  </p>
+						   </div>
+						   <ul role="menu">
+							  <li><a href="https://www.sito.it/cs/internet/servizi-per-te/lavoratore.html">Lavoratore</a></li>
+							  <li><a href="https://www.sito.it/cs/internet/servizi-per-te/datore-di-lavoro.html">Datore di Lavoro</a></li>
+							  <li><a href="https://www.sito.it/cs/internet/servizi-per-te/consulente.html">Consulente</a></li>
+							  <li><a href="https://www.sito.it/cs/internet/servizi-per-te/caf-e-patronati.html">Patronati e Caf</a></li>
+							  <li><a href="https://www.sito.it/cs/internet/servizi-per-te/operatori-della-sanita.html">Operatori della sanità</a></li>
+							  <li><a href="https://www.sito.it/cs/internet/servizi-per-te/altri-utenti.html">Altri Utenti</a></li>
+						   </ul>
+						</div>
+					 </li>
+					 <li class="dropdown">
+						<a href="https://www.sito.it/cs/internet/supporto.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Supporto <span class="sr-only">(selezionato)</span>
+						</a> 
+						<div class="dropdown-menu">
+						   <div class="visible-sm-block visible-md-block visible-lg-block">
+							  <h3>Supporto</h3>
+							  <p>
+								 Servizi e sistemi a supporto delle attività istituzionali
+							  </p>
+							  <p>
+								 <button type="submit" class="btn btn-default" onclick="location.href='/cs/internet/supporto.html';">vai alla sezione</button>
+							  </p>
+						   </div>
+						   <ul role="menu">
+							  <li><a href="https://www.sito.it/cs/internet/supporto/faq.html">Faq</a></li>
+							  <li><a href="https://www.sito.it/cs/internet/supporto/guide-online.html">Guide online</a></li>
+							  <li><a href="https://www.sito.it/cs/internet/supporto/sito-risponde.html">sito risponde</a></li>
+							  <li><a href="https://www.sito.it/cs/internet/supporto/contact-center.html">Contact center</a></li>
+							  <li><a href="https://www.sito.it/cs/internet/supporto/agenda-appuntamenti.html">Agenda appuntamenti</a></li>
+							  <li><a href="https://www.sito.it/cs/internet/supporto/sedi.html">Sedi</a></li>
+						   </ul>
+						</div>
+					 </li>
+				  </ul>
+				  <ul role="menu" class="nav navbar-nav navbar-right">
+					 <li>
+						<a href="https://www.sito.it/cs/internet/accedi-ai-servizi-online.html" title="Accedi ai servizi online">  
+						<span>Accedi ai </span>servizi online
+						</a>
+					 </li>
+				  </ul>
+			   </div>
+			</nav>
+
+
+			 <!--div ng-include="'header.html'"-->
+			 
+         </header>
+         <hr class="hidden">
+         <main id="contenutoprincipale">
+            <h2>Contenuto homepage</h2>
+            <div class="row">
+               <div class="col-xs-3 col-sm-3 col-lg-3 menu_left">
+                  <nav id="navigazionesecondaria" class="col-xs-12 col-sm-4 col-lg-12 slider-menu filtro">
+                     <div class="box-menu-contestuale">
+                        <button id="close-slider-menu" class="pull-right" aria-label="Chiude il menù laterale" aria-expanded="true" aria-controls="navigazionesecondaria">				
+                        <span class="fa fa-close">
+                        </span>			
+                        </button>		 			 			 			 		 		
+                              <ul role="menu">
+                                 <li >
+                                    <a href="./#home">Cruscotto</a>															
+                                    <span class="sr-only"> (selezionato)
+                                    </span>											
+                                    <ul role="menu">
+                                       <li>					
+                                          <a href="./#acquisizionire">Acquisizione</a>	
+                                       </li>
+										<li>					
+                                          <a href="./#home">Operazione 2</a>	
+                                       </li>
+										<li>					
+                                          <a href="./#home">Operazione 3</a>	
+                                       </li>
+										<li>					
+                                          <a href="./#home">Operazione 4</a>	
+                                       </li>
+									 </ul>
+                                 </li>
+                              </ul>
+                     </div>
+                  </nav>
+               </div>
+               <div class="col-xs-9 col-sm-9 col-lg-9">
+                  <div ui-view></div>
+               </div>
+            </div>
+         </main>
+         <hr class="hidden">
+         <footer>
+            <nav id="navigazionealternativa" class="row">
+               <h2 class="hidden">Navigazione alternativa</h2>
+               <div class="row col-xs-12 col-lg-6">
+                  <div class="col-xs-12 col-sm-6">
+                     <h3>Menu 1</h3>
+                     <ul>
+                        <li><a
+                           href='https://www.boo.it'
+                           title="Item 1"> Item 1 </a></li>
+                        <li><a
+                           href='https://www.boo.it'
+                           title="Item 2"> Item 1 </a></li>
+                       
+                     </ul>
+                  </div>
+                  <div class="col-xs-12 col-sm-6">
+                     <h3>Menu 1</h3>
+                     <ul>
+                        <li><a
+                           href='https://www.boo.it'
+                           title="Item 1"> Item 1 </a></li>
+                        <li><a
+                           href='https://www.boo.it'
+                           title="Item 2"> Item 1 </a></li>
+                       
+                     </ul>
+                  </div>
+               </div>
+               <div class="row col-xs-12 col-lg-6">
+                                   <div class="col-xs-12 col-sm-6">
+                     <h3>Menu 1</h3>
+                     <ul>
+                        <li><a
+                           href='https://www.boo.it'
+                           title="Item 1"> Item 1 </a></li>
+                        <li><a
+                           href='https://www.boo.it'
+                           title="Item 2"> Item 1 </a></li>
+                       
+                     </ul>
+                  </div>
+                                    <div class="col-xs-12 col-sm-6">
+                     <h3>Menu 1</h3>
+                     <ul>
+                        <li><a
+                           href='https://www.boo.it'
+                           title="Item 1"> Item 1 </a></li>
+                        <li><a
+                           href='https://www.boo.it'
+                           title="Item 2"> Item 1 </a></li>
+                       
+                     </ul>
+                  </div>
+               </div>
+               <h2 class="hidden">Menu social</h2>
+               <div id="blanket" style="display: none;"></div>
+               <div id="popUp" style="display: none;">
+                  <a href="#" onclick="popup('popUp')" title="close"><span
+                     class="glyphicon glyphicon-remove"></span></a>
+                  <h3>SEGUI sito</h3>
+                  <div class="row riga_popup riga_popup_facebook">
+                     <div class="col-xs-12 col-sm-3 logo_popup_facebook">
+                        <span class="col-xs-12 col-sm-8 logo_img"> <img
+                           src="https://www.inail.it/static/img/facebook_logo_round50.png"
+                           alt="Facebook" />
+                        </span> <span class="col-sm-8 logo_popup logo_popup_title hidden-xs">FACEBOOK</span>
+                        <hr />
+                     </div>
+                     <div class="col-xs-12 col-sm-9 elenco_popup elenco_popup_facebook">
+                        <ul>
+                           <li><a
+                              href="https://www.facebook.com/pages/INAIL/188698687839726">Inail</a>:
+                              Pagina istituzionale
+                           </li>
+                           <li><a href="https://www.facebook.com/Inailperleimprese">Incentivi
+                              alle imprese</a>: Pagina tematica dedicata al mondo delle aziende
+                              e dei professionisti
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="row riga_popup riga_popup_twitter">
+                     <div class="col-xs-12 col-sm-3 logo_popup logo_popup_twitter">
+                        <span class="col-xs-12 col-sm-8 logo_img"> <img
+                           src="https://www.inail.it/static/img/twitter_logo_round50.png"
+                           alt="Twitter" />
+                        </span> <span class="col-sm-8 logo_popup_title hidden-xs">TWITTER</span>
+                        <hr />
+                     </div>
+                     <div class="col-xs-12 col-sm-9 elenco_popup elenco_popup_twitter">
+                        <ul>
+                           <li><a href="https://twitter.com/inail_gov">@Inail_gov</a>:
+                              Profilo istituzionale, cura i rapporti con gli organi di
+                              informazione
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="row riga_popup riga_popup_youtube">
+                     <div class="col-xs-12 col-sm-3 logo_popup_youtube">
+                        <span class="col-xs-12 col-sm-8 logo_img"> <img
+                           src="https://www.inail.it/static/img/youtube_logo_round50.png"
+                           alt="Youtube" />
+                        </span> <span class="col-sm-8 logo_popup logo_popup_title hidden-xs">YOUTUBE</span>
+                        <hr />
+                     </div>
+                     <div class="col-xs-12 col-sm-9 elenco_popup elenco_popup_facebook">
+                        <ul>
+                           <li><a
+                              href="https://www.youtube.com/user/UfficioStampaInail">Inail</a>:
+                              Profilo istituionale
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="row riga_popup riga_popup_linkedin">
+                     <div class="col-xs-12 col-sm-3 logo_popup logo_popup_linkedin">
+                        <span class="col-xs-12 col-sm-8 logo_img"> <img
+                           src="https://www.inail.it/static/img/linkedin_logo_round50.png"
+                           alt="Linkedin" />
+                        </span> <span class="col-sm-8 logo_popup_title hidden-xs">LINKEDIN</span>
+                        <hr />
+                     </div>
+                     <div class="col-xs-12 col-sm-9 elenco_popup elenco_popup_linkedin">
+                        <ul>
+                           <li><a href="https://www.linkedin.com/company/inail">Inail</a>:
+                              Profilo istituzionale
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="row riga_popup riga_popup_rss">
+                     <div class="col-xs-12 col-sm-3 logo_popup logo_popup_rss">
+                        <span class="col-xs-12 col-sm-8 logo_img"> <img
+                           src="https://www.inail.it/static/img/rss_logo_round50.png"
+                           alt="RSS" />
+                        </span> <span class="col-sm-8 logo_popup_title hidden-xs">RSS</span>
+                        <hr />
+                     </div>
+                     <div class="col-xs-12 col-sm-9 elenco_popup elenco_popup_rss">
+                        <ul>
+                           <li><a
+                              href='/cs/Satellite?c=Page&amp;cid=2443085357296&amp;d=Touch&amp;pagename=commons%2Flayout%2FfeedRss&amp;rssSubtype=news'>News:</a>
+                              <span>News di attualit&agrave; sulle politiche del
+                              lavoro e della sicurezza</span>
+                           </li>
+                           <li><a
+                              href='/cs/Satellite?c=Page&amp;cid=2443085357296&amp;d=Touch&amp;pagename=commons%2Flayout%2FfeedRss&amp;rssSubtype=avvisiScadenze'>Avvisi
+                              e Scadenze:</a> <span>Indicazioni sulle novit&agrave; di
+                              particolare rilievo per l'iInail e la gestione del rapporto
+                              assicurativo</span>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <ul id="menusocial"
+                  class="col-md-3 col-lg-3 col-md-offset-9 col-lg-offset-9">
+                  <li class="facebook"><a href="#" title="facebook"
+                     onclick="popup('popUp')"><span>Facebook</span></a></li>
+                  <li class="twitter"><a href="#" title="twitter"
+                     onclick="popup('popUp')"><span>Twitter</span></a></li>
+                  <li class="youtube"><a href="#" title="youtube"
+                     onclick="popup('popUp')"><span>Youtube</span></a></li>
+                  <li class="linkedin"><a href="#" title="linkedin"
+                     onclick="popup('popUp')"><span>Linkedin</span></a></li>
+                  <li class="rss"><a href="#" title="rss"
+                     onclick="popup('popUp')"><span>RSS</span></a></li>
+               </ul>
+               <ul id="spid"
+                  class="col-md-3 col-lg-3 col-md-offset-9 col-lg-offset-9">
+
+               </ul>
+            </nav>
+            <p class="hidden">
+               <a href="#navinterna"
+                  title="torna alla navigazione interna alla pagina">Torna alla
+               navigazione interna</a>
+            </p>
+         </footer>
+         <div id="subfooter">
+            <!-- p class="copy">
+               
+            </p-->
+            <h2 class="hidden">Menu di servizio</h2>
+            <ul id="menuservizio">
+               <li class=""><a
+                  href='https://www.inail.it/cs/internet/responsabile-della-pubblicazione.html'
+                  title="Responsabile della pubblicazione"> Responsabile della
+                  pubblicazione </a>
+               </li>
+               <li class=""><a
+                  href='https://www.inail.it/cs/internet/avviso-all_utenza.html'
+                  title="Avviso all’utenza"> Avviso all’utenza </a></li>
+               <li class=""><a
+                  href='https://www.inail.it/cs/internet/accessibilita.html'
+                  title="Accessibilità"> Accessibilità </a></li>
+               <li class=""><a
+                  href='https://www.inail.it/cs/internet/monitoraggio-accessi.html'
+                  title="Monitoraggio accessi"> Monitoraggio accessi </a></li>
+               <li class="last"><a
+                  href='https://www.inail.it/cs/internet/mappa-del-sito.html'
+                  title="Mappa del sito"> Mappa del sito </a></li>
+            </ul>
+            <p class="hidden">
+               <a href="#navinterna"
+                  title="torna alla navigazione interna alla pagina">Torna alla
+               navigazione interna</a>
+            </p>
+            <h2 class="hidden">Menu in lingua</h2>
+            <ul id="menulingua">
+               <li class="en"><a
+                  href='https://www.inail.it/cs/internet/multi/english.html' title=""><span>Inglese</span></a></li>
+               <li class="es"><a
+                  href='https://www.inail.it/cs/internet/multi/espanol.html' title=""><span>Spagnolo</span></a></li>
+               <li class="de"><a
+                  href='https://www.inail.it/cs/internet/multi/deutsch.html' title=""><span>Tedesco</span></a></li>
+               <li class="fr"><a
+                  href='https://www.inail.it/cs/internet/multi/francais.html'
+                  title=""><span>Francese</span></a></li>
+            </ul>
+            <div id="internet-accesskey" style="display: none;">
+               <ul>
+                  <li><a href='https://www.inail.it/cs/internet/home.html'
+                     accesskey="h" title='Home '>Home</a>&nbsp;(accesskey:h)</li>
+                  <li><a href='https://www.inail.it/cs/internet/istituto.html'
+                     accesskey="I" title="Vai a Istituto">Vai a Istituto</a>&nbsp;(accesskey:i)</li>
+                  <li><a href='https://www.inail.it/cs/internet/attivita.html'
+                     accesskey="a" title="Vai a Attività">Vai a Attivit&agrave;</a>&nbsp;(accesskey:a)</li>
+                  <li><a
+                     href='https://www.inail.it/cs/internet/atti-e-documenti.html'
+                     accesskey="d" title="Vai a Atti e Documenti">Vai a Atti e
+                     Documenti</a>&nbsp;(accesskey:d)
+                  </li>
+                  <li><a
+                     href='https://www.inail.it/cs/internet/comunicazione.html'
+                     accesskey="c" title="Vai a Comunicazione">Vai a Comunicazione</a>&nbsp;(accesskey:c)</li>
+                  <li><a
+                     href='https://www.inail.it/cs/internet/servizi-per-te.html'
+                     accesskey="t" title="Vai a Servizi Per Te">Vai a Servizi per
+                     Te</a>&nbsp;(accesskey:t)
+                  </li>
+                  <li><a href='https://www.inail.it/cs/internet/supporto.html'
+                     accesskey="s" title="Vai a Supporto">Vai a Supporto</a>&nbsp;(accesskey:s)</li>
+               </ul>
+            </div>
+            <p class="hidden">
+               <a href="#navinterna"
+                  title="torna alla navigazione interna alla pagina">Torna alla
+               navigazione interna</a>
+            </p>
+         </div>
+         <!--script type="text/javascript">
+            var pgName = document.location.pathname.match(/[^\/]+$/)[0];
+            if (pgName == 'risultati_ricerca.html') {
+            	var xT = $('#contenutoprincipale h2').html();
+            	kT = xT.split('"')[1];
+            	xT = xT.split('(')[1].trim().replace(')', '');
+            	$('head').append('_$tag__________________________________');
+            	$('head').append('_$tag____________________________________');
+            }
+            (function(i, s, o, g, r, a, m) {
+            	i['GoogleAnalyticsObject'] = r;
+            	i[r] = i[r] || function() {
+            		(i[r].q = i[r].q || []).push(arguments)
+            	}, i[r].l = 1 * new Date();
+            	a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+            	a.async = 1;
+            	a.src = g;
+            	m.parentNode.insertBefore(a, m)
+            })(window, document, 'script',
+            		'//www.google-analytics.com/analytics.js', 'ga');
+            
+            ga('create', 'UA-48734544-1', 'auto');
+            ga('send', 'pageview');
+            </script-->
+         <!--script type="text/javascript">
+            window.webtrendsAsyncInit = function() {
+            	var dcs = new Webtrends.dcs()
+            			.init(
+            					{
+            						dcsid : "dcs222co4zca4b0ba2wru16o7_8z9t",
+            						domain : "statse.webtrendslive.com",
+            						timezone : 1,
+            						i18n : true,
+            						download : true,
+            						downloadtypes : "xls,doc,pdf,txt,csv,zip,docx,xlsx,rar,gzip",
+            						fpcdom : ".inail.it",
+            						plugins : {
+            							hm : {
+            								src : "//s.webtrends.com/js/webtrends.hm.js"
+            							},
+            							facebook : {
+            								src : "//s.webtrends.com/js/webtrends.fb.js"
+            							},
+            							yt : {
+            								src : "//s.webtrends.com/js/webtrends.yt.js"
+            							}
+            						}
+            					}).track();
+            };
+            (function() {
+            	var s = document.createElement("script");
+            	s.async = true;
+            	s.src = "https://www.inail.it/static/js/webtrends.min.js";
+            	var s2 = document.getElementsByTagName("script")[0];
+            	s2.parentNode.insertBefore(s, s2);
+            }());
+            </script-->
+         <!--script type="text/javascript"
+            src="https://www.inail.it/static/js/feedRSS.js"></script-->
+      </div>
+      <!-- wrapper init -->
+      <!-- javascript init -->
+      <script type="text/javascript" src="common/lib/jquery.min.js"></script>
+      <!-- jquery -->
+      <script type="text/javascript" src="common/lib/main.js"></script>
+      <!-- main -->
+      <script type="text/javascript" src="common/lib/bootstrap.min.js"></script>
+      <!-- bootstrap -->
+      <script type="text/javascript"
+         src="common/lib/bootstrap-datepicker.min.js"></script>
+      <!-- datepicker -->
+      <script type="text/javascript"
+         src="common/lib/jquery.nicescroll.min.js"></script>
+      <!-- nicescroll -->
+      <script type="text/javascript" src="common/lib/zozo.accordion.js"></script>
+      <!-- homepage accordion -->
+      <script type="text/javascript" src="common/lib/jquery.easing.min.js"></script>
+      <script type="text/javascript" src="common/lib/highcharts.js"></script>
+      <!-- highcharts -->
+      <script type="text/javascript" src="common/lib/themes/mycompass.js"></script>
+      <script type="text/javascript"
+         src="common/lib/jquery.highchartTable.js"></script>
+      <!-- jquery hightcharts -->
+      <script type="text/javascript" src="common/lib/owl.carousel.js"></script>
+      <!-- slider -->
+      <script type="text/javascript" src="common/lib/validator.min.js"></script>
+      <!-- validator -->
+      <!-- tutorial -->
+      <script type="text/javascript" src="common/lib/customscript.js"></script>
+      <!--click for responsive tables-->
+      <script type="text/javascript" src="common/lib/jquery.shortcuts.js"></script>
+      <!-- datatable -->
+      <script type="text/javascript" src="common/lib/jquery.dataTables.js"></script>
+      <script type="text/javascript" src="common/lib/dataTables.bootstrap.js"></script>
+      <script type="text/javascript"
+         src="common/lib/dataTables.responsive.min.js"></script>
+      <script type="text/javascript"
+         src="common/lib/coloured-signed-num-ord.js"></script>
+      <script type="text/javascript" src="common/lib/date-eu-ord.js"></script>
+      <!-- javascript end -->
+      <script type="text/javascript"></script>
+      <!-- ANGULAR APPLICATION BOOTSTRAP INIT -->
+      <script type="text/javascript" src="config.js"></script>
+      <script type="text/javascript" data-main="ib"
+         src="common/lib/require.js"></script>
+      <script type="text/javascript" src="common/lib/ajv.js"></script>
+      <!-- ANGULAR APPLICATION BOOTSTRAP END -->
+   </body>
+</html>
+

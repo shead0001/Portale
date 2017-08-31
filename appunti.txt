@@ -1,0 +1,3 @@
+0) usare grunt buid-sit --force
+1)rimuovere dalla home appcache
+2) lasciare nella webapp env.js

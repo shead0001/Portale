@@ -1,0 +1,51 @@
+
+    <div class="row margintop5 password">
+        <div class="col-lg-12">
+            <div class="form-group required">
+                <h3>	
+                    <label for="data-nascita">Compilare i campi usando il tastierino </label>
+                </h3>
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <div class="col-xs-2 col-xs-offset-1">
+                            <img class="img-responsive num-key" ng-src="{{profilo.key1}}" id="{{profilo.key1Code}}">
+                        </div>
+                        <div class="col-xs-2">
+                            <img class="img-responsive num-key" ng-src="{{profilo.key2}}" id="{{profilo.key2Code}}">
+                        </div>
+                        <div class="col-xs-2">
+                            <img class="img-responsive num-key" ng-src="{{profilo.key3}}" id="{{profilo.key3Code}}">
+                        </div>
+                        <div class="col-xs-2">
+                            <img class="img-responsive num-key" ng-src="{{profilo.key4}}" id="{{profilo.key4Code}}">
+                        </div>
+                        <div class="col-xs-2">
+                            <img class="img-responsive num-key" ng-src="{{profilo.key5}}" id="{{profilo.key5Code}}">
+                        </div>
+
+                    </div>								
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row margintop5" ng-init="profilo.formaTastierino()">
+      
+      
+        <div class="col-lg-10 col-lg-offset-1" >
+            <div class="row">
+              
+                  <div ng-repeat="tasto in profilo.tastierino" class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center">
+                      <img class="img-responsive num-key" ng-src="{{tasto.value}}" id="{{tasto.id}}" ng-click="profilo.aggiornaCodicePin(tasto.id)">
+                  </div>
+              
+                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center">
+                </div>
+                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center">
+                      <img class="img-responsive num-key" src="common/static/img/login/cancella.png" ng-click="profilo.resetCodicePin()">
+                  </div>
+               
+            </div>
+        </div>
+    </div>
+
+

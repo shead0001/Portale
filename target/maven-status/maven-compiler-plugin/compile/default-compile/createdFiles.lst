@@ -1,0 +1,9 @@
+it\dm\inail\uef\be\BeService.class
+it\dm\inail\uef\controller\AcquiizioneRedditiEsentiRest.class
+it\dm\inail\uef\controller\BatchPDFTemporaneeRest.class
+it\dm\inail\uef\controller\dto\Error.class
+it\dm\inail\uef\filter\CorsFilter.class
+it\dm\inail\uef\app\FiscoServerApplication.class
+it\dm\inail\uef\controller\dto\Response.class
+it\dm\inail\uef\controller\BasicController.class
+it\dm\inail\uef\config\FileConfig.class

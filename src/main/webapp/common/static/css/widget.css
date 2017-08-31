@@ -1,0 +1,120 @@
+/*widget principale della pagina : top-content*/
+.main-widget{
+	background: #fff;
+}
+.main-widget-title{
+	/* color: #E3001B; */
+	margin: 0px;
+	text-transform: uppercase;
+}
+.main-widget-title .main-icon-widget{
+    color: #e3001b;
+    font-size: 20px;
+    transform: rotate(-10deg);
+}
+
+/*widget con tools : bottom-content*/
+.widget{
+	background: #fff;
+	padding: 15px;
+	margin-bottom: 10px;
+}
+.widget-header{
+	/* margin-bottom: 20px; */
+}
+.widget-header .icon-widget{
+	vertical-align: sub;
+}
+.widget-header .widget-title{
+	color: #e3001b;
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 28px;
+	text-transform: uppercase;
+	display: inline-block;
+	margin: 0px;
+}
+.widget-header .widget-tools a{
+	color: #333 !important;
+	vertical-align: sub;
+	padding: 3px;
+}
+.widget-body{
+	margin-top: 20px;
+}
+
+/*box per le info utili nel bottom-content*/
+.box{
+	background: #f5f5f5;
+	color: #6e6e6e;
+	margin: 5px 0 10px;
+}
+.box .box-content{
+	padding: 10px 30px 10px 10px;
+	position: relative;
+}
+.box .box-link{
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	margin-top: -10px;
+	color: #999999;
+}
+/*bordi laterali sinistri del box di sopra*/
+.box.red-border{
+	border-left: 10px solid #e3001b;
+}
+.box.orange-border{
+	border-left: 10px solid #fc8d42;
+}
+.box.green-border{
+	border-left: 10px solid #12ae33;
+}
+.box.blue-border{
+	border-left: 10px solid #008BE2;
+}
+
+/*box per ultime operazioni*/
+.box-ultime{
+	background: #666666;
+	color: #fff;
+	padding: 10px;
+}
+.box-ultime i.fa{
+	margin-right: 15px;
+}
+.box-ultime a{
+	color: #fff;
+}
+.box-ultime a:hover,
+.box-ultime a:focus{
+	color: #CCCCCC;
+}
+
+/* box con bordi */
+.box-bordered{
+	border: 1px solid #ccc;
+	padding: 10px;
+}
+
+/* box con bordi senza padding */
+.box-bordered-no-padding {
+  border: 1px solid #ccc;
+}
+
+.padding-10 {
+  padding: 10px;
+}
+
+.orange {
+  color: #ff3300;
+}
+
+.orange-bg {
+  background-color: #ff3300;
+  color: white;
+}
+
+.orange-hr {
+  border-top: 1px solid #ff3300;
+}

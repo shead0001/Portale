@@ -1,0 +1,1 @@
+mvn -B release:clean release:prepare release:perform -DuseReleaseProfile=false -Dusername=scaponnetto -Dpassword=scaponnetto

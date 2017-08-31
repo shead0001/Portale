@@ -1,0 +1,7 @@
+<ol class="breadcrumb">                                                
+  <li><a ui-sref="home"><span><i class="fa fa-home"></i></span></a></li>
+  <li class="active" ng-repeat="item in global.ib.navigator.breadcrumb">                                        		
+    <span ng-if="$last">{{item.title}}</span>
+    <a ng-if="!$last" ui-sref="{{item.route}}" href="#"><span>{{item.title}}</span></a> 
+  </li>				
+</ol>
